@@ -226,6 +226,7 @@ class UserController extends Controller
                         }
                     }
                     $request->session()->put('permissionTitle', $permissionTitle);
+//                    return $request->session()->all();
                     return redirect()->route('dashboard')->with('success', 'Welcome');
                 } else {
                     throw new AuthenticationException($loggedIn);

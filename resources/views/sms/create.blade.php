@@ -21,6 +21,7 @@
                                 @csrf
                                 <div class="form-body">
                                     <div class="row">
+
                                         <div class="col-sm-12 col-md-12 mb-3 d-flex">
                                             <div style="padding-right: 10px">
                                                 <input type="radio" name="sms_to" value="doctor">
@@ -35,10 +36,10 @@
                                                 <span class="">Specific Number</span>
                                             </div>
                                         </div>
-                                        <div class="col-sm-12 col-md-6">
+                                        <div class="col-sm-12 col-md-6" id="receiver">
                                             <div class="form-group">
                                                 <label for="receiver" class="mb-2 d-flex align-items-center">Receiver Number</label>
-                                                <input type="text" class="form-control" id="receiver" name="receiver"
+                                                <input type="text" class="form-control" name="receiver"
                                                        placeholder="Receiver Number" value="{{ old('receiver') }}">
                                             </div>
                                             <span class="text-danger">@error('receiver'){{ $message }}@enderror</span>
@@ -46,8 +47,16 @@
 
                                         <div class="col-sm-12 col-md-6">
                                             <div class="form-group mb-3">
+                                                <label for="subject"
+                                                       class="form-label"><span class="required">*</span> Subject</label>
+                                                <textarea class="form-control" name="subject" rows="1">{{ old('subject') }}</textarea>
+                                                <span class="text-danger">@error('subject'){{ $message }}@enderror</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 col-md-6">
+                                            <div class="form-group mb-3">
                                                 <label for="message"
-                                                       class="form-label">Message</label>
+                                                       class="form-label"><span class="required">*</span> Message</label>
                                                 <textarea class="form-control" name="message" rows="3">{{ old('message') }}</textarea>
                                                 <span class="text-danger">@error('message'){{ $message }}@enderror</span>
                                             </div>
@@ -66,3 +75,39 @@
         </div>
     </div>
 @endsection
+@push('customScripts')
+<script>
+
+    $("#editForm").validate({
+        rules:{
+            sms_to: "required",
+            subject : "required",
+            message : "required",
+        },
+        messages:{
+            sms_to: "Receiver is required",
+            subject: "Subject is required",
+            message: "Message is required",
+        }
+    });
+
+
+    $(".select2").select2({
+        allowClear: true
+    })
+
+    function onDelete(e) {
+        console.log(e.value)
+        document.getElementById('delForm').setAttribute('action', e.value)
+    }
+    $("#receiver").hide();
+    $('input[name="sms_to"]').on('change', function () {
+        if (this.value != 'specific') {
+            $("#receiver").hide()
+        } else {
+            $("#receiver").show()
+        }
+    });
+
+</script>
+@endpush

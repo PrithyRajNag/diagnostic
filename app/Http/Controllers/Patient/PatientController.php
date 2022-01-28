@@ -42,8 +42,7 @@ class PatientController extends Controller
                         $btn = '<a href="' . route('patient.edit', $row->uuid) . '" class="btn btn-sm btn-primary icon icon-left"><i data-feather="edit"></i></a>
                                 <a href="' . route('patient.show', $row->uuid) . '" class="btn btn-sm btn-primary icon icon-left"><i data-feather="info"></i></a>
                                 <button data-bs-toggle="modal" data-bs-target="#danger" onclick="onDelete(this)" id="' . route('patient.destroy', $row->id) . '" name="delBtn"
-                                                                    class="btn btn-sm btn-danger icon icon-left "><i data-feather="trash-2"></i></button>
-                                <a href="' . route('patient-billing-invoice.edit', $row->uuid) . '" class="btn btn-sm btn-warning icon icon-left"><i data-feather="dollar-sign"></i></a>';
+                                                                    class="btn btn-sm btn-danger icon icon-left "><i data-feather="trash-2"></i></button>';
                         return $btn;
                     })
                     ->rawColumns(['action'])

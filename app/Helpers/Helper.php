@@ -219,14 +219,7 @@ class Helper
                 'permission' => 'dashboard.index',
 
             ],
-            [
-                'sideIcon' => 'truck',
-                'title' => 'Ambulance',
-                'link' => route('ambulance.index'),
-                'hasSub' => false,
-                'subMenu' => [],
-                'permission' => 'ambulance.index',
-            ],
+
             [
                 'sideIcon' => 'briefcase',
                 'title' => 'Department',
@@ -288,16 +281,6 @@ class Helper
                         'link' => route('patient.index'),
                         'permission' => 'patient.index',
                     ],
-////                    [
-////                        'sideIcon' => '',
-////                        'title' => 'Add Document ',
-////                        'link' => route('patient.index'),
-////                    ],
-////                    [
-////                        'sideIcon' => '',
-////                        'title' => 'Document List ',
-////                        'link' => route('patient.index'),
-////                    ],
                 ]
 
             ],
@@ -308,12 +291,6 @@ class Helper
                 'hasSub' => true,
                 'permission' => 'lab.index',
                 'subMenu' => [
-                    [
-                        'sideIcon' => '',
-                        'title' => 'Add Lab',
-                        'link' => route('lab.create'),
-                        'permission' => 'lab.create',
-                    ],
                     [
                         'sideIcon' => '',
                         'title' => 'Lab List ',
@@ -383,29 +360,7 @@ class Helper
                 'permission' => 'appointment.index',
 
             ],
-////            [
-////                'sideIcon' => 'file-text',
-////                'title' => 'Prescription',
-////                'link' => '',
-////                'hasSub' => true,
-////                'subMenu' => [
-////                    [
-////                        'sideIcon' => '',
-////                        'title' => 'Add Patient Case Study',
-////                        'link' => route('patient-case-study.create'),
-////                    ],
-////                    [
-////                        'sideIcon' => '',
-////                        'title' => 'Patient Case Study List ',
-////                        'link' => route('patient-case-study.index'),
-////                    ],
-//////                    [
-//////                        'sideIcon' => '',
-//////                        'title' => 'Prescription List',
-//////                        'link' => route('patient.index'),
-//////                    ],
-////                ]
-////            ],
+
             [
                 'sideIcon' => 'user',
                 'title' => 'Account Manager',
@@ -425,22 +380,11 @@ class Helper
                         'link' => route('account.index'),
                         'permission' => 'account.index',
                     ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Payment',
-//                        'link' => route('payment.create'),
-//                    ],
                     [
                         'sideIcon' => '',
                         'title' => 'Payment List',
                         'link' => route('payment.index'),
                         'permission' => 'payment.index',
-                    ],
-                    [
-                        'sideIcon' => '',
-                        'title' => 'Patient Billing List',
-                        'link' => route('patient-billing-invoice.index'),
-                        'permission' => 'patient-billing-invoice.index',
                     ],
                     [
                         'sideIcon' => '',
@@ -466,12 +410,6 @@ class Helper
                         'link' => route('salary-invoice.index'),
                         'permission' => 'salary-invoice.index',
                     ],
-
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Report',
-//                        'link' => route('report.index'),
-//                    ],
                     [
                         'sideIcon' => '',
                         'title' => 'Debit Report',
@@ -487,88 +425,7 @@ class Helper
 
                 ]
             ],
-//            [
-//                'sideIcon' => 'file-text',
-//                'title' => 'Insurance',
-//                'link' => '',
-//                'hasSub' => true,
-//                'subMenu' => [
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Insurance',
-//                        'link' => route('patient.create'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Insurance List',
-//                        'link' => route('patient.index'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Invoice',
-//                        'link' => route('patient.index'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Limit Approval',
-//                        'link' => route('patient.index'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Limit Approval List',
-//                        'link' => route('patient.index'),
-//                    ],
-//
-//                ]
-//            ],
-            [
-                'sideIcon' => 'dollar-sign',
-                'title' => 'Billing',
-                'link' => '',
-                'hasSub' => true,
-                'permission' => 'service.index',
-                'subMenu' => [
-                    [
-                        'sideIcon' => '',
-                        'title' => 'Service',
-                        'link' => route('service.index'),
-                        'permission' => 'service.index',
-                    ],
-                    [
-                        'sideIcon' => '',
-                        'title' => 'Package',
-                        'link' => route('package.index'),
-                        'permission' => 'package.index',
-                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Admit',
-//                        'link' => route('admit.index'),
-//
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Advance Payment',
-//                        'link' => route('advance.create'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Advance Payment List',
-//                        'link' => route('advance.index'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Bill',
-//                        'link' => route('bill.create'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Bill List',
-//                        'link' => route('bill.index'),
-//                    ],
 
-                ]
-            ],
             [
                 'sideIcon' => 'briefcase',
                 'title' => 'Human Resource',
@@ -612,56 +469,12 @@ class Helper
                         'link' => route('human-resource.pharmacist'),
                         'permission' => 'human-resource.pharmacist',
                     ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Receptionist List',
-//                        'link' => route('human-resource.receptionist'),
-//                    ],
-//
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Representative List',
-//                        'link' => route('patient.index'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Case Manager List',
-//                        'link' => route('patient.index'),
-//                    ],
-
-                ]
-            ],
-            [
-                'sideIcon' => 'circle',
-                'title' => 'Bed Manager',
-                'link' => '',
-                'hasSub' => true,
-                'permission' => 'bed-assign.index',
-                'subMenu' => [
                     [
                         'sideIcon' => '',
-                        'title' => 'Bed Assign',
-                        'link' => route('bed-assign.index'),
-                        'permission' => 'bed-assign.index',
+                        'title' => 'Receptionist List',
+                        'link' => route('human-resource.receptionist'),
+                        'permission' => 'human-resource.receptionist',
                     ],
-                    [
-                        'sideIcon' => '',
-                        'title' => 'Bed List',
-                        'link' => route('bed-list.index'),
-                        'permission' => 'bed-list.index',
-                    ],
-                    [
-                        'sideIcon' => '',
-                        'title' => 'Bed Type ',
-                        'link' => route('bed-type.index'),
-                        'permission' => 'bed-type.index',
-                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Report',
-//                        'link' => route('patient.index'),
-//                    ],
-
                 ]
             ],
             [
@@ -672,125 +485,15 @@ class Helper
                 'permission' => 'notice.index',
                 'subMenu' => []
             ],
-//            [
-//                'sideIcon' => 'activity',
-//                'title' => 'Hospital Activity',
-//                'link' => '',
-//                'hasSub' => true,
-//                'subMenu' => [
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Birth Report',
-//                        'link' => route('birth.create'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Birth Report',
-//                        'link' => route('birth.index'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Death Report',
-//                        'link' => route('death.create'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Death Report',
-//                        'link' => route('death.index'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Operation Report',
-//                        'link' => route('operation-report.create'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Operation Report',
-//                        'link' => route('operation-report.index'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Investigation Report',
-//                        'link' => route('investigation-report.create'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Investigation Report',
-//                        'link' => route('investigation-report.index'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Add Medicine Category',
-//                        'link' => route('medicine-category.create'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Medicine Category List',
-//                        'link' => route('medicine-category.index'),
-//                    ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Medicine List',
-//                        'link' => route('medicine.index'),
-//                    ],
-//
-//                ]
-//            ],
-//            [
-//                'sideIcon'=>'bold',
-//                'title' => 'Blood Bank',
-//                'link' => '',
-//                'hasSub' => true,
-//                'subMenu' => [
-//                    [
-//                        'sideIcon'=>'',
-//                        'title' => 'Blood Input',
-//                        'link' => route('blood-input.index'),
-//                    ],
-//                    [
-//                        'sideIcon'=>'',
-//                        'title' => 'Blood Output',
-//                        'link' => route('blood-output.index'),
-//                    ],
-//                    [
-//                        'sideIcon'=>'',
-//                        'title' => 'Blood Donor',
-//                        'link' => route('blood-donor.index'),
-//                    ],
-//                ]
-//            ],
-//            [
-//                'sideIcon' => 'settings',
-//                'title' => 'Setting',
-//                'link' => '',
-//                'hasSub' => true,
-//                'subMenu' => [
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'App Setting',
-//                        'link' => route('setting.create'),
-//                    ],
-////                    [
-////                        'title' => 'Language Setting',
-////                        'link' => route('patient.index'),
-////                    ],
-//
-//                ]
-//            ],
-//            [
-//                'sideIcon' => 'message-square',
-//                'title' => 'SMS',
-//                'link' => route('sms.index'),
-//                'hasSub' => false,
-//                'subMenu' => [],
-//            ],
-//            [
-//                'sideIcon' => 'mail',
-//                'title' => 'Mail',
-//                'link' => route('mail.index'),
-//                'hasSub' => false,
-//                'subMenu' => [],
-//            ],
+
+            [
+                'sideIcon' => 'message-square',
+                'title' => 'SMS',
+                'link' => route('sms.index'),
+                'hasSub' => false,
+                'permission' => 'sms.index',
+                'subMenu' => [],
+            ],
             [
                 'sideIcon' => 'user-check',
                 'title' => 'System User',
@@ -816,12 +519,6 @@ class Helper
                         'link' => route('permission.index'),
                         'permission' => 'permission.index',
                     ],
-//                    [
-//                        'sideIcon' => '',
-//                        'title' => 'Profile',
-//                        'link' => route('profile.edit', Auth::user()->uuid ?? ''),
-//                    ],
-
                 ]
             ],
 
