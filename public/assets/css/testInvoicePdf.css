@@ -1,0 +1,147 @@
+/*@font-face {*/
+/*    font-family: "Wallpoet";*/
+/*    !*src: src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");*!*/
+/*    !*src: url("https://fonts.googleapis.com/css?family=Maven+Pro:400,500,600,700,900&display=swap");*!*/
+/*    src: url("https://fonts.googleapis.com/css?family=Wallpoet");*/
+/*}*/
+
+.invoice-box {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    font-size: 20px;
+    font-family: "Maven Pro";
+    /*border: 1px solid #eee;*/
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);*/
+    /*line-height: 1px;*/
+    color: #555;
+    /*border-bottom: 1px dashed red;*/
+    text-align: right;
+}
+.invoice-box .text{
+    font-size: 10px;
+    font-style: italic;
+    line-height: 0px;
+    color: blue;
+}
+.line{
+    border-bottom: 1px dashed red;
+}
+
+.invoice-box .sig{
+    font-size: small;
+    line-height: 1px;
+}
+
+.invoice-box table {
+    width: 100%;
+    /*line-height: 1px;*/
+    border: 0px;
+    /*display: block;*/
+    /*position: relative;*/
+    /*text-align: left;*/
+}
+
+.invoice-box table td {
+    padding: 5px;
+    vertical-align: center;
+    /*border: 1px solid #1b1e21;*/
+}
+.invoice-box .test-info table{
+    /*border: 1px solid #1b1e21;*/
+}
+.invoice-box .test-info table td{
+    /*border: 1px solid #1b1e21;*/
+}
+.invoice-box table tr td:nth-child(2) {
+    text-align: right;
+}
+
+.invoice-box table tr.top table td{
+    padding-bottom: 10px;
+}
+
+
+/*.invoice-box table tr.top table td.title {*/
+/*    font-size: 45px;*/
+/*    line-height: 45px;*/
+/*    color: #333;*/
+/*}*/
+
+.invoice-box table tr.information table td {
+    padding-bottom: 40px;
+}
+.invoice-box table tr.heading{
+    background: #eee;
+}
+
+.invoice-box table tr.heading td {
+    /*background: #eee;*/
+    border: 2px solid #eee;
+    font-weight: bold;
+}
+
+.invoice-box table tr.details td {
+    padding-bottom: 20px;
+}
+
+.invoice-box table tr.item td {
+    /*border-bottom: 1px solid #eee;*/
+}
+
+.invoice-box table tr.item.last td {
+    border-bottom: none;
+}
+
+.invoice-box table tr.total td:nth-child(2) {
+    border-top: 2px solid #eee;
+    font-weight: bold;
+}
+/*.invoice-box .test-info{*/
+/*    padding: 10px 0px;*/
+/*}*/
+
+
+@media only screen and (max-width: 600px) {
+    .invoice-box table tr.top table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    .invoice-box table tr.information table td {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+}
+
+/** RTL **/
+.invoice-box.rtl {
+    direction: rtl;
+    font-family: Tahoma, 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+}
+
+.invoice-box.rtl table {
+    text-align: right;
+}
+
+.invoice-box.rtl table tr td:nth-child(2) {
+    text-align: left;
+}
+
+.invoice-box .bill-no{
+    margin-left: 5px;
+    font-size: 12px;
+    text-align: left;
+}
+.invoice-box .test-info{
+    text-align: left;
+}
+.invoice-box .test-info .doc-info{
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+.invoice-box .test-info h3{
+    margin: 10px 0px;
+}
