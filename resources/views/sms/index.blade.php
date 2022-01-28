@@ -100,11 +100,10 @@
                     "order": [[ 0, "desc" ]],
                     ajax:"{{route('sms.index') }}",
                     columns: [
-                        // { data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                        // { data: 'title', name: 'title'},
-                        // { data: 'address', name: 'address'},
-                        // { data: 'organization_type', name: 'organization_type'},
-                        // { data: 'action', name: 'action', orderable: true, searchable: false, className:'text-center'},
+                        { data: 'DT_RowIndex', name: 'DT_RowIndex'},
+                        { data: 'receiver', name: 'receiver'},
+                        { data: 'created_at', name: 'created_at'},
+                        { data: 'action', name: 'action', orderable: true, searchable: false, className:'text-center'},
                     ]
                 });
             });

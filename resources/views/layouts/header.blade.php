@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport csrf-token" content="width=device-width, initial-scale=1 {{ csrf_token() }}">
-    <title>HMS</title>
+    <title>Diagnostic</title>
     @if(Helper::favicon() != null)
         @if(Helper::favicon()['favicon'] != null)
             <link rel="shortcut icon" type="image/jpg/png/svg/jpeg" href="{{asset("storage/favicons/".Helper::favicon()['favicon'])}}"/>

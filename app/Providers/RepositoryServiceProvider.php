@@ -36,6 +36,7 @@ use App\Repository\Eloquent\ScheduleRepository;
 use App\Repository\Eloquent\ServiceRepository;
 use App\Repository\Eloquent\SettingRepository;
 use App\Repository\Eloquent\PaymentRepository;
+use App\Repository\Eloquent\SmsRepository;
 use App\Repository\Eloquent\TestCategoryRepository;
 use App\Repository\Eloquent\TestInvoiceRepository;
 use App\Repository\Eloquent\TestItemRepository;
@@ -64,6 +65,7 @@ use App\Repository\ServiceRepositoryInterface;
 use App\Repository\SettingRepositoryInterface;
 use App\Repository\LabRepositoryInterface;
 use App\Repository\PaymentRepositoryInterface;
+use App\Repository\SmsRepositoryInterface;
 use App\Repository\TestCategoryRepositoryInterface;
 use App\Repository\TestInvoiceRepositoryInterface;
 use App\Repository\TestItemRepositoryInterface;
@@ -125,6 +127,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(TestResultUnitRepositoryInterface::class, TestResultUnitRepository::class);
         $this->app->bind(TestReportRepositoryInterface::class, TestReportRepository::class);
         $this->app->bind(TestReportTemplateRepositoryInterface::class, TestReportTemplateRepository::class);
+        $this->app->bind(SmsRepositoryInterface::class, SmsRepository::class);
 
 
     }
