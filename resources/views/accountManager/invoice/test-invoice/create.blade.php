@@ -298,6 +298,7 @@
         var chk1 = $(".select-test");
         chk1.on('change', function () {
             $(this).closest("div").next().prop('checked', $(this).is(":checked"));
+            console.log($(this).closest("div"))
         });
 
 

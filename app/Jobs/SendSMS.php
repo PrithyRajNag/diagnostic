@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Sms;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Bus\Queueable;
@@ -28,6 +29,7 @@ class SendSMS implements ShouldQueue
         $this->phone_number = $phone_number;
         $this->message = $message;
     }
+
 
     /**
      * Execute the job.
@@ -66,6 +68,7 @@ class SendSMS implements ShouldQueue
             logger('SMS info');
             logger($url);
         } catch (GuzzleException $exception) {
+            $exception->getMessage();
         }
     }
 }

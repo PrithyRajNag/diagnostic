@@ -206,6 +206,10 @@
             $('#no_pid').hide()
             $('#patient_id').attr('disabled', false)
         })
+        $('#patient_id').on('change', function (){
+            $('#no_pid').show()
+        })
+
         $('.input-date').datepicker({
             format: 'yyyy-mm-dd',
             autoclose:true
@@ -271,13 +275,25 @@
                         $("#slots").html('<span class="error font-bold">No schedule found for selected date</span>')
                     }
                     else {
-                        $("#slots").html(res.map((slot) => `<div class="form-check"><input class="form-check-input form-check-success" type="radio" name="schedule_id" id="schedule_id" value="${slot.id}" required><label class="form-check-label" for="schedule_id">${tConvert(slot.start_time) + ' - ' + tConvert(slot.end_time)}</label></div>`).join(' '))
+                        // $("#slots").html(res.map((slot) => `<div class="form-check check-time"><input class="form-check-input form-check-success" type="radio" name="schedule_id" id="schedule_id" value="${slot.id}" required><label class="form-check-label" for="schedule_id">${tConvert(slot.start_time) + ' - ' + tConvert(slot.end_time)}</label></div>`).join(' '))
+                        $("#slots").html(res.map((slot) => `<div class="form-check check-time"><input class="form-check-input form-check-success" type="radio" name="schedule_id" id="schedule_id" value="${slot.id}" required><label class="form-check-label" >${tConvert(slot.start_time) + ' - ' + tConvert(slot.end_time)}</label></div><input type="radio" name="appointment_time" id="appointment_time" value="${tConvert(slot.start_time) + ' - ' + tConvert(slot.end_time)}" hidden>`).join(' '))
+
                     }
+                    let chk1 = $("input:radio[id='schedule_id']");
+                    chk1.on('change', function () {
+                        $(this).closest("div").next().prop('checked', $(this).is(":checked"));
+                    });
+
+
                 })
                 .catch(err => {
                     console.log(err)
                 })
         })
+
+
+
+
 
         //convert 24 hour format time 12 hour format time
         function tConvert (time) {

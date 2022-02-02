@@ -61,7 +61,7 @@ class SmsRepository extends BaseRepository implements SmsRepositoryInterface
 
         if (!empty($receivers) && $this->model->message != null) {
             foreach ($receivers as $item) {
-                SendSMS::dispatch($item, $this->model->message);
+                SendSMS::dispatchSync($item, $this->model->message);
             }
         }
         return $this->model->save();

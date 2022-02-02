@@ -11,7 +11,7 @@ class FooterSection extends Component
     public function __construct()
     {
         $settings = Setting::first();
-        $this->title = $settings->footer_text ?? "Innovative Software Limited";
+        $this->title = $settings->footer_text ?? "Innovative Station Limited";
     }
 
     /**

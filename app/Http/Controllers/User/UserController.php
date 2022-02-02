@@ -204,7 +204,9 @@ class UserController extends Controller
 
                     }
                     $permissionTitle = [];
-                    array_push($permissionTitle, 'profile.store', 'profile.edit', 'profile.update', 'profile.show');
+                    if ($role != 'owner'){
+                        array_push($permissionTitle, 'profile.store', 'profile.edit', 'profile.update', 'profile.show');
+                    }
                     if ($role == 'owner') {
                         $all_permission = Permission::pluck('slug');
                         foreach ($all_permission as $p) {
