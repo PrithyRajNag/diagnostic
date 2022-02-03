@@ -56,7 +56,7 @@ class SmsController extends Controller
             $data = $request->all();
             if ($validated) {
                 if (auth()->user()->profile != null) {
-                    $this->repository->createSms($data);
+                     $this->repository->createSms($data);
                     return redirect()->route('sms.index')->with('success', 'Sms Send Successfully');
                 } else {
                     throw new Exception('User does not have a name in system');
