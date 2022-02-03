@@ -17,15 +17,12 @@ class PermissionsTableSeeder extends Seeder
     {
         Model::unguard();
         $permissions = [
+            //Dashboard
             [
                 "title" => 'Dashboard',
                 "slug" => 'dashboard.index',
             ],
             //profile
-//            [
-//                "title" => 'Profile Create View',
-//                "slug" => 'profile.edit',
-//            ],
             [
                 "title" => 'Create Profile',
                 "slug" => 'profile.store',
@@ -43,36 +40,6 @@ class PermissionsTableSeeder extends Seeder
                 "slug" => 'profile.show',
             ],
 
-            //ambulance
-            [
-                "title" => 'Ambulance List',
-                "slug" => 'ambulance.index',
-            ],
-            [
-                "title" => 'Ambulance Create View',
-                "slug" => 'ambulance.create',
-            ],
-            [
-                "title" => 'Create Ambulance',
-                "slug" => 'ambulance.store',
-            ],
-
-            [
-                "title" => 'Ambulance Edit View',
-                "slug" => 'ambulance.edit',
-            ],
-            [
-                "title" => 'Update Ambulance',
-                "slug" => 'ambulance.update',
-            ],
-            [
-                "title" => 'Delete Ambulance',
-                "slug" => 'ambulance.destroy',
-            ],
-            [
-                "title" => 'Ambulance Info',
-                "slug" => 'ambulance.show',
-            ],
             //department
             [
                 "title" => 'Department List',
@@ -508,40 +475,6 @@ class PermissionsTableSeeder extends Seeder
                 "title" => 'Payment Info',
                 "slug" => 'payment.show',
             ],
-            //Patient Billing
-            [
-                "title" => 'Patient Billing List',
-                "slug" => 'patient-billing-invoice.index',
-            ],
-            [
-                "title" => 'Patient Billing Create View',
-                "slug" => 'patient-billing-invoice.create',
-            ],
-            [
-                "title" => 'Create Patient Billing',
-                "slug" => 'patient-billing-invoice.store',
-            ],
-            [
-                "title" => 'Patient Billing Update View',
-                "slug" => 'patient-billing-invoice.edit',
-            ],
-            [
-                "title" => 'Update Patient Billing',
-                "slug" => 'patient-billing-invoice.update',
-            ],
-            [
-                "title" => 'Delete Patient Billing',
-                "slug" => 'patient-billing-invoice.destroy',
-            ],
-            [
-                "title" => 'Patient Billing Info',
-                "slug" => 'patient-billing-invoice.show',
-            ],
-            [
-                "title" => 'Patient Billing Invoice PDF ',
-                "slug" => 'patient-billing-invoice.pdf',
-            ],
-
             //testInvoice
             [
                 "title" => 'Test Invoice List',
@@ -614,65 +547,6 @@ class PermissionsTableSeeder extends Seeder
                 "title" => 'Credit Report List',
                 "slug" => 'report.credit',
             ],
-            //service
-            [
-                "title" => 'Service List',
-                "slug" => 'service.index',
-            ],
-            [
-                "title" => 'Service Create View',
-                "slug" => 'service.create',
-            ],
-            [
-                "title" => 'Create Service',
-                "slug" => 'service.store',
-            ],
-            [
-                "title" => 'Service Edit View',
-                "slug" => 'service.edit',
-            ],
-            [
-                "title" => 'Update Service',
-                "slug" => 'service.update',
-            ],
-            [
-                "title" => 'Delete Service',
-                "slug" => 'service.destroy',
-            ],
-            [
-                "title" => 'Service Info',
-                "slug" => 'service.show',
-            ],
-            //package
-            [
-                "title" => 'Package List',
-                "slug" => 'package.index',
-            ],
-            [
-                "title" => 'Package Create View',
-                "slug" => 'package.create',
-            ],
-            [
-                "title" => 'Create Package',
-                "slug" => 'package.store',
-            ],
-            [
-                "title" => 'Package Edit View',
-                "slug" => 'package.edit',
-            ],
-            [
-                "title" => 'Update Package',
-                "slug" => 'package.update',
-            ],
-            [
-                "title" => 'Delete Package',
-                "slug" => 'package.destroy',
-            ],
-            [
-                "title" => 'Package Info',
-                "slug" => 'package.show',
-            ],
-
             //staff
             [
                 "title" => 'Human Resource List',
@@ -726,93 +600,6 @@ class PermissionsTableSeeder extends Seeder
             [
                 "title" => 'Human Resource(Receptionist)',
                 "slug" => 'human-resource.receptionist',
-            ],
-            //bedAssign
-            [
-                "title" => 'Bed Assign List',
-                "slug" => 'bed-assign.index',
-            ],
-            [
-                "title" => 'Bed Assign Create View',
-                "slug" => 'bed-assign.create',
-            ],
-            [
-                "title" => 'Create Bed Assign',
-                "slug" => 'bed-assign.store',
-            ],
-            [
-                "title" => 'Bed Assign Edit View',
-                "slug" => 'bed-assign.edit',
-            ],
-            [
-                "title" => 'Update Bed Assign',
-                "slug" => 'bed-assign.update',
-            ],
-            [
-                "title" => 'Delete Bed Assign',
-                "slug" => 'bed-assign.destroy',
-            ],
-            [
-                "title" => 'Bed Assign Info',
-                "slug" => 'bed-assign.show',
-            ],
-            //bedList
-            [
-                "title" => 'Bed List',
-                "slug" => 'bed-list.index',
-            ],
-            [
-                "title" => 'Bed List Create View',
-                "slug" => 'bed-list.create',
-            ],
-            [
-                "title" => 'Bed List',
-                "slug" => 'bed-list.store',
-            ],
-            [
-                "title" => 'Bed List Edit View',
-                "slug" => 'bed-list.edit',
-            ],
-            [
-                "title" => 'Update Bed List',
-                "slug" => 'bed-list.update',
-            ],
-            [
-                "title" => 'Delete Bed List',
-                "slug" => 'bed-list.destroy',
-            ],
-            [
-                "title" => 'Bed List Info',
-                "slug" => 'bed-list.show',
-            ],
-            //bedType
-            [
-                "title" => 'Bed Type Index',
-                "slug" => 'bed-type.index',
-            ],
-            [
-                "title" => 'Bed Type Create View',
-                "slug" => 'bed-type.create',
-            ],
-            [
-                "title" => 'Create Bed Type',
-                "slug" => 'bed-type.store',
-            ],
-            [
-                "title" => 'Bed Type Edit View',
-                "slug" => 'bed-type.edit',
-            ],
-            [
-                "title" => 'Update Bed Type',
-                "slug" => 'bed-type.update',
-            ],
-            [
-                "title" => 'Delete Bed Type',
-                "slug" => 'bed-type.destroy',
-            ],
-            [
-                "title" => 'Bed Type Info',
-                "slug" => 'bed-type.show',
             ],
             //noticeBoard
             [
@@ -976,7 +763,27 @@ class PermissionsTableSeeder extends Seeder
                 "title" => 'Update Setting',
                 "slug" => 'setting.update',
             ],
-
+            //SMS
+            [
+                "title" => 'Sms List',
+                "slug" => 'sms.index',
+            ],
+            [
+                "title" => 'Sms Create View',
+                "slug" => 'sms.create',
+            ],
+            [
+                "title" => 'Create Sms',
+                "slug" => 'sms.store',
+            ],
+            [
+                "title" => 'Delete Sms',
+                "slug" => 'sms.destroy',
+            ],
+            [
+                "title" => 'Sms Info',
+                "slug" => 'sms.show',
+            ],
         ];
 
         foreach ($permissions as $permission) {

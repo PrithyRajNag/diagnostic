@@ -16,10 +16,12 @@ class CreateSmsTable extends Migration
         Schema::create('sms', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
-            $table->string('sms_to');
             $table->string('receiver');
+            $table->string('sender');
+            $table->string('subject');
             $table->string('message');
 
+            $table->softDeletes();
             $table->timestamps();
         });
     }

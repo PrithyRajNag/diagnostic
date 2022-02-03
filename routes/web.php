@@ -1,4 +1,3 @@
-
 <?php
 
 
@@ -35,6 +34,7 @@ use App\Http\Controllers\Patient\PatientAppointmentController;
 use App\Http\Controllers\Patient\PatientController;
 use App\Http\Controllers\Blood\BloodInputController;
 use App\Http\Controllers\Blood\BloodOutputController;
+
 //use App\Http\Controllers\OrganizationController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ReportController;
@@ -99,9 +99,9 @@ Route::post('/reset-password', [ForgotPasswordController::class, 'submitResetPas
 
 
 //Login
-Route::get('/', [UserController::class,'loginPage'])->name('login-page');
-Route::post('/login', [UserController::class,'logIn'])->name('login');
-Route::get('/login', [UserController::class,'logIn']);
+Route::get('/', [UserController::class, 'loginPage'])->name('login-page');
+Route::post('/login', [UserController::class, 'logIn'])->name('login');
+Route::get('/login', [UserController::class, 'logIn']);
 
 
 //Route::any('/login', function (Router $router) {
@@ -117,18 +117,18 @@ Route::get('/login', [UserController::class,'logIn']);
 
 //User
 Route::middleware(['permission'])->group(function () {
-    Route::resource('user', UserController::class)->middleware( 'verified');
+    Route::resource('user', UserController::class)->middleware('verified');
 });
 Route::middleware(['permission'])->group(function () {
-    Route::resource('profile', ProfileController ::class)->middleware( 'verified');
+    Route::resource('profile', ProfileController ::class)->middleware('verified');
 });
 
 //Logout
-Route::get('/logout', [UserController::class,'logout'])->name('logout');
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 
 //Dashboard
-Route::get('/dashboard', [UserController::class,'dashboard'])->name('dashboard')->middleware('auth','verified');
+Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware('auth', 'verified');
 
 
 //Forget Password
@@ -154,7 +154,7 @@ Route::middleware(['permission'])->group(function () {
 
 //Permission
 Route::middleware(['permission'])->group(function () {
-    Route::resource('permission', PermissionController::class)->middleware( 'verified');
+    Route::resource('permission', PermissionController::class)->middleware('verified');
 });
 
 
@@ -166,7 +166,6 @@ Route::middleware(['permission'])->group(function () {
 Route::middleware(['permission'])->group(function () {
     Route::resource('department', DepartmentController::class);
 });
-
 
 
 //patient
@@ -181,95 +180,96 @@ Route::get('/patient/get-doctor/{type?}/{id?}', [PatientController::class, 'getD
 
 //Bed List
 Route::middleware(['permission'])->group(function () {
-    Route::resource('bed-list', BedListController::class)->middleware( 'verified');
+    Route::resource('bed-list', BedListController::class)->middleware('verified');
 });
 
 
 //Bed Type
 Route::middleware(['permission'])->group(function () {
-    Route::resource('bed-type', BedTypeController::class)->middleware( 'verified');
+    Route::resource('bed-type', BedTypeController::class)->middleware('verified');
 });
 
 
 //Bed Assign
 Route::middleware(['permission'])->group(function () {
-    Route::resource('bed-assign', BedAssignController::class)->middleware( 'verified');
+    Route::resource('bed-assign', BedAssignController::class)->middleware('verified');
 });
 
 
 //Birth
 Route::middleware(['permission'])->group(function () {
-    Route::resource('birth', BirthController::class)->middleware( 'verified');
+    Route::resource('birth', BirthController::class)->middleware('verified');
 });
 
 
 //Death
 Route::middleware(['permission'])->group(function () {
-    Route::resource('death', DeathController::class)->middleware( 'verified');
+    Route::resource('death', DeathController::class)->middleware('verified');
 });
 
 
 //Blood
 Route::middleware(['permission'])->group(function () {
-    Route::resource('blood-input', BloodInputController::class)->middleware( 'verified');
+    Route::resource('blood-input', BloodInputController::class)->middleware('verified');
 });
 Route::middleware(['permission'])->group(function () {
-    Route::resource('blood-output', BloodOutputController::class)->middleware( 'verified');
+    Route::resource('blood-output', BloodOutputController::class)->middleware('verified');
 });
 Route::middleware(['permission'])->group(function () {
-    Route::resource('blood-donor', BloodDonorController::class)->middleware( 'verified');
+    Route::resource('blood-donor', BloodDonorController::class)->middleware('verified');
 });
 
 
 //Sms
-//Route::resource('sms', SmsController::class);
-
+Route::middleware(['permission'])->group(function () {
+    Route::resource('sms', SmsController::class)->middleware('verified');
+});
 //Mail
 //Route::resource('mail', MailController::class);
 
 // Ambulance
 Route::middleware(['permission'])->group(function () {
-    Route::resource('ambulance', AmbulanceController::class)->middleware( 'verified');
+    Route::resource('ambulance', AmbulanceController::class)->middleware('verified');
 });
 
 
 //Lab
 Route::middleware(['permission'])->group(function () {
-    Route::resource('lab',  LabController::class)->middleware( 'verified');
+    Route::resource('lab', LabController::class)->middleware('verified');
 });
 
 
 //Notice
 Route::middleware(['permission'])->group(function () {
-    Route::resource('notice', NoticeController::class)->middleware( 'verified');
+    Route::resource('notice', NoticeController::class)->middleware('verified');
 });
 //Download Notice
-Route::get('{uuid}/download', [NoticeController::class,'download'])->name('notice.download');
+Route::get('{uuid}/download', [NoticeController::class, 'download'])->name('notice.download');
 
 //Doctor
 Route::middleware(['permission'])->group(function () {
-    Route::resource('doctor', DoctorController::class)->middleware( 'verified');
+    Route::resource('doctor', DoctorController::class)->middleware('verified');
 });
 
 
 //Appointment
 Route::middleware(['permission'])->group(function () {
-    Route::resource('appointment', PatientAppointmentController::class)->middleware( 'verified');
+    Route::resource('appointment', PatientAppointmentController::class)->middleware('verified');
 });
 //API call
-Route::get('/appointment/get-doctor/{type}/{id}',[PatientAppointmentController::class, 'getDoctor']);
-Route::get('/appointment/get-slot/{uuid}/{day}',[PatientAppointmentController::class, 'getSlot']);
+Route::get('/appointment/get-doctor/{type}/{id}', [PatientAppointmentController::class, 'getDoctor']);
+Route::get('/appointment/get-slot/{uuid}/{day}', [PatientAppointmentController::class, 'getSlot']);
 Route::get('/appointment/get-patient/{id}', [PatientAppointmentController::class, 'findPatient']);
 
 
 //Account
 Route::middleware(['permission'])->group(function () {
-    Route::resource('account', AccountController::class)->middleware( 'verified');
+    Route::resource('account', AccountController::class)->middleware('verified');
 });
 
 //Payment
 Route::middleware(['permission'])->group(function () {
-    Route::resource('payment', PaymentController::class)->middleware( 'verified');
+    Route::resource('payment', PaymentController::class)->middleware('verified');
 });
 
 //Report
@@ -281,22 +281,22 @@ Route::get('/report/credit-report/{filter}', [ReportController::class, 'getCredi
 
 //Schedule
 Route::middleware(['permission'])->group(function () {
-    Route::resource('schedule', ScheduleController::class)->middleware( 'verified');
+    Route::resource('schedule', ScheduleController::class)->middleware('verified');
 });
 
 
 //Services
 Route::middleware(['permission'])->group(function () {
-    Route::resource('billing/service', ServiceController::class)->middleware( 'verified');
+    Route::resource('billing/service', ServiceController::class)->middleware('verified');
 });
 
 
 //Package
 Route::middleware(['permission'])->group(function () {
-    Route::resource('billing/package', PackageController::class)->middleware( 'verified');
+    Route::resource('billing/package', PackageController::class)->middleware('verified');
 });
 
-Route::get('/test/{services}', [PackageController::class,'test']);
+Route::get('/test/{services}', [PackageController::class, 'test']);
 
 //Patient-admit
 Route::middleware(['permission'])->group(function () {
@@ -325,8 +325,8 @@ Route::middleware(['permission'])->group(function () {
 //Setting
 //Route::resource('setting', SettingController::class);
 Route::middleware(['permission'])->group(function () {
-    Route::get('setting', [SettingController::class,'create'])->name('setting.create')->middleware( 'verified');
-    Route::post('setting/update', [SettingController::class,'store'])->name('setting.store')->middleware( 'verified');
+    Route::get('setting', [SettingController::class, 'create'])->name('setting.create')->middleware('verified');
+    Route::post('setting/update', [SettingController::class, 'store'])->name('setting.store')->middleware('verified');
 });
 
 
@@ -356,12 +356,12 @@ Route::middleware(['permission'])->group(function () {
 
 //Human Resource
 Route::middleware(['permission'])->group(function () {
-    Route::resource('human-resource', HumanResourceController::class )->middleware( 'verified');
-    Route::get('human-resource-accountant', [HumanResourceController::class, 'accountant'] )->name('human-resource.accountant');
-    Route::get('human-resource-nurse', [HumanResourceController::class, 'nurse'] )->name('human-resource.nurse');
-    Route::get('human-resource-laboratorist', [HumanResourceController::class, 'laboratorist'] )->name('human-resource.laboratorist');
-    Route::get('human-resource-pharmacist', [HumanResourceController::class, 'pharmacist'] )->name('human-resource.pharmacist');
-    Route::get('human-resource-receptionist', [HumanResourceController::class, 'receptionist'] )->name('human-resource.receptionist');
+    Route::resource('human-resource', HumanResourceController::class)->middleware('verified');
+    Route::get('human-resource-accountant', [HumanResourceController::class, 'accountant'])->name('human-resource.accountant');
+    Route::get('human-resource-nurse', [HumanResourceController::class, 'nurse'])->name('human-resource.nurse');
+    Route::get('human-resource-laboratorist', [HumanResourceController::class, 'laboratorist'])->name('human-resource.laboratorist');
+    Route::get('human-resource-pharmacist', [HumanResourceController::class, 'pharmacist'])->name('human-resource.pharmacist');
+    Route::get('human-resource-receptionist', [HumanResourceController::class, 'receptionist'])->name('human-resource.receptionist');
 });
 
 
@@ -372,38 +372,38 @@ Route::middleware(['permission'])->group(function () {
 //});
 //Test Category
 Route::middleware(['permission'])->group(function () {
-    Route::resource('test-category', TestCategoryController::class )->middleware( 'verified');
+    Route::resource('test-category', TestCategoryController::class)->middleware('verified');
 });
 
 //Test Item
 Route::middleware(['permission'])->group(function () {
-    Route::resource('test-item', TestItemController::class )->middleware( 'verified');
+    Route::resource('test-item', TestItemController::class)->middleware('verified');
 });
 //Test Result Category
 Route::middleware(['permission'])->group(function () {
-    Route::resource('test-result-category', TestRestultCategoryController::class )->middleware( 'verified');
+    Route::resource('test-result-category', TestRestultCategoryController::class)->middleware('verified');
 });
 //Test Result Item
 Route::middleware(['permission'])->group(function () {
-    Route::resource('test-result-item', TestResultItemController::class )->middleware( 'verified');
+    Route::resource('test-result-item', TestResultItemController::class)->middleware('verified');
 });
 Route::middleware(['permission'])->group(function () {
-    Route::resource('test-result-unit', TestResultUnitController::class )->middleware( 'verified');
+    Route::resource('test-result-unit', TestResultUnitController::class)->middleware('verified');
 });
 Route::middleware(['permission'])->group(function () {
-    Route::resource('test-report', TestReportController::class )->middleware( 'verified');
+    Route::resource('test-report', TestReportController::class)->middleware('verified');
 });
 Route::get('/test-report/get-invoice-info/{number}', [TestReportController::class, 'findPatientByInvoice']);
 Route::get('/test-report/get-template/{test}', [TestReportController::class, 'findTemplate']);
 
 
 Route::middleware(['permission'])->group(function () {
-    Route::resource('test-report-template', TestReportTemplateController::class )->middleware( 'verified');
+    Route::resource('test-report-template', TestReportTemplateController::class)->middleware('verified');
 });
 
 
 Route::middleware(['permission'])->group(function () {
-    Route::resource('salary-invoice', SalaryInvoiceController::class)->middleware( 'verified');
+    Route::resource('salary-invoice', SalaryInvoiceController::class)->middleware('verified');
 });
 Route::get('/salary-invoice/get-staff-by-number/{number}', [SalaryInvoiceController::class, 'findStaffByNumber']);
 Route::get('/salary-invoice/pdf/{invoiceNumber}', [SalaryInvoiceController::class, 'invoicePdf'])->name('salary-invoice.pdf');
@@ -412,7 +412,7 @@ Route::get('/salary-invoice/pdf/{invoiceNumber}', [SalaryInvoiceController::clas
 //Test Invoice
 Route::middleware(['permission'])->group(function () {
     Route::resource('test-invoice', TestInvoiceController::class)->middleware('verified');
-    Route::get('/test-invoice/pdf/{invoiceNumber}', [TestInvoiceController::class,'pdf'])->name('test-invoice.pdf')->middleware('verified');
+    Route::get('/test-invoice/pdf/{invoiceNumber}', [TestInvoiceController::class, 'pdf'])->name('test-invoice.pdf')->middleware('verified');
 });
 
 Route::get('/test-invoice/get-patient/{pid}', [TestInvoiceController::class, 'findPatient']);
@@ -421,7 +421,7 @@ Route::get('/test-invoice/get-patient-by-number/{number}', [TestInvoiceControlle
 //Billing Invoice
 Route::middleware(['permission'])->group(function () {
     Route::resource('patient-billing-invoice', PatientBillingInvoiceController::class)->middleware('verified');
-    Route::get('/patient-billing-invoice/pdf/{invoiceNumber}', [PatientBillingInvoiceController::class,'pdf'])->name('patient-billing-invoice.pdf')->middleware('verified');
+    Route::get('/patient-billing-invoice/pdf/{invoiceNumber}', [PatientBillingInvoiceController::class, 'pdf'])->name('patient-billing-invoice.pdf')->middleware('verified');
 });
 
 //Doctor Percentage

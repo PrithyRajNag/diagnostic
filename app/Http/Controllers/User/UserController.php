@@ -204,7 +204,9 @@ class UserController extends Controller
 
                     }
                     $permissionTitle = [];
-                    array_push($permissionTitle, 'profile.store', 'profile.edit', 'profile.update', 'profile.show');
+                    if ($role != 'owner'){
+                        array_push($permissionTitle, 'profile.store', 'profile.edit', 'profile.update', 'profile.show');
+                    }
                     if ($role == 'owner') {
                         $all_permission = Permission::pluck('slug');
                         foreach ($all_permission as $p) {
@@ -226,6 +228,7 @@ class UserController extends Controller
                         }
                     }
                     $request->session()->put('permissionTitle', $permissionTitle);
+//                    return $request->session()->all();
                     return redirect()->route('dashboard')->with('success', 'Welcome');
                 } else {
                     throw new AuthenticationException($loggedIn);
