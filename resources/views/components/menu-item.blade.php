@@ -1,7 +1,7 @@
 
 <li class="sidebar-item {{$hasSub ? 'has-sub' : ''}} {{URL::current()==$link || in_array(URL::current(), Arr::flatten($subMenu)) ? 'active' : ''}}">
    <a href="{{ $link }}" class="sidebar-link ">
-       <i data-feather="{{ $sideIcon }}" width="20"></i>
+       <i class="icon-color" data-feather="{{ $sideIcon }}" width="20"></i>
        <span>{{ $title }}</span>
 
    </a>

@@ -9,14 +9,14 @@
 
     <section class="section">
         <div class="row mb-2 mt-3">
-            <x-dashboard-card title="STAFF" value="{{$totalStaffs}}"></x-dashboard-card>
-            <x-dashboard-card title="DOCTORS" value="{{$totalDoctors}}"></x-dashboard-card>
-            <x-dashboard-card title="NURSES" value="{{$totalNurses}}"></x-dashboard-card>
-            <x-dashboard-card title="ACCOUNTANTS" value="{{$totalAccountants}}"></x-dashboard-card>
-            <x-dashboard-card title="PATIENTS" value="{{$totalPatients}}"></x-dashboard-card>
-            <x-dashboard-card title="TESTS" value="{{$totalTests}}"></x-dashboard-card>
-            <x-dashboard-card title="AMBULANCES" value="{{$totalAmbulances}}"></x-dashboard-card>
-            <x-dashboard-card title="DUE" value=" {{number_format($totalDue, 2,'.',',')}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" title="STAFF" value="{{$totalStaffs}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" title="DOCTORS" value="{{$totalDoctors}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" title="NURSES" value="{{$totalNurses}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" title="ACCOUNTANTS" value="{{$totalAccountants}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" title="PATIENTS" value="{{$totalPatients}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" title="TESTS" value="{{$totalTests}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" title="AMBULANCES" value="{{$totalAmbulances}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" title="DUE" value="{{number_format($totalDue, 2,'.',',')}}"></x-dashboard-card>
         </div>
         <div class="row">
             <div class="col-xl-4 col-sm-6 col-12">
@@ -55,8 +55,8 @@
         <div class="row mb-4">
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class='card-heading p-1 pl-3'>EARNING FROM TESTS</h3>
+                    <div class="card-header bg-blue3">
+                        <h3 class='card-heading p-1 pl-3 large-card-font-color'>Earning from tests</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -71,8 +71,8 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class='card-heading p-1 pl-3'>TODAY'S EARNING</h3>
+                    <div class="card-header bg-blue3">
+                        <h3 class='card-heading p-1 pl-3 large-card-font-color'>Today's Earning</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -87,8 +87,8 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class='card-heading p-1 pl-3'>WEEKLY EARNING </h3>
+                    <div class="card-header bg-blue3">
+                        <h3 class='card-heading p-1 pl-3 large-card-font-color'>Weekly Earning </h3>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -103,8 +103,8 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class='card-heading p-1 pl-3'>MONTHLY EARNING</h3>
+                    <div class="card-header bg-blue3">
+                        <h3 class='card-heading p-1 pl-3 large-card-font-color'>Monthly Earning</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">
@@ -119,8 +119,8 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <div class="card-header">
-                        <h3 class='card-heading p-1 pl-3'>YEARLY EARNING</h3>
+                    <div class="card-header bg-blue3">
+                        <h3 class='card-heading p-1 pl-3 large-card-font-color'>Yearly Earning</h3>
                     </div>
                     <div class="card-body">
                         <div class="row">

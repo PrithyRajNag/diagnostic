@@ -255,11 +255,13 @@ Route::middleware(['permission'])->group(function () {
 //Appointment
 Route::middleware(['permission'])->group(function () {
     Route::resource('appointment', PatientAppointmentController::class)->middleware('verified');
+    Route::get('/appointment-for-today', [PatientAppointmentController::class, 'appointments'])->name('appointment-for-today.appointments')->middleware('verified');
 });
 //API call
 Route::get('/appointment/get-doctor/{type}/{id}', [PatientAppointmentController::class, 'getDoctor']);
 Route::get('/appointment/get-slot/{uuid}/{day}', [PatientAppointmentController::class, 'getSlot']);
 Route::get('/appointment/get-patient/{id}', [PatientAppointmentController::class, 'findPatient']);
+
 
 
 //Account

@@ -141,6 +141,7 @@
                                                 </select>
                                                 <span class="mb-0" style="color: red; font-family: -apple-system" id="no-doctor"></span>
                                             </fieldset>
+{{--                                            <input type="text" name="doctor_name" id="doctor_name">--}}
                                             <span class="text-danger">@error('doctor_id'){{ $message }}@enderror</span>
                                         </div>
                                         <div class="col-sm-12 col-md-6">
@@ -257,6 +258,7 @@
                     })
             }
         })
+
 
 
         $('#appointment_date').on('change', function (e) {

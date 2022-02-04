@@ -14,13 +14,7 @@
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-12 col-sm-12">
-                            <h2 class="text-capitalize">Appointment List</h2>
-                            <div class="d-flex justify-content-end text-right">
-                                <a href="{{route('appointment-for-today.appointments')}}"
-                                   class="btn btn-sm btn-primary text-center text-uppercase" style="margin-right: 5px;">Today's Appointments List </a>
-                                <a href="{{route('appointment.create')}}"
-                                   class="btn btn-sm btn-primary text-center text-uppercase">Create new </a>
-                            </div>
+                            <h2 style="font-family: Gruppo"> Today's Appointment List</h2>
                             <hr/>
                         </div>
                     </div>
@@ -33,12 +27,11 @@
                                        id="laravel_datatable">
                                     <thead>
                                     <th>SL</th>
-                                    <th>{{'Patient Name'}}</th>
-                                    <th>{{'Doctor Name'}}</th>
-                                    <th>{{'Slot'}}</th>
-                                    <th>{{'Appointment Date'}}</th>
-                                    <th>{{'Status'}}</th>
-                                    <th>{{'Action'}}</th>
+                                    <th>{{'Name'}}</th>
+                                    <th>{{'Phone Number'}}</th>
+                                    <th>{{'Slot Time'}}</th>
+                                    <th>{{ 'Status' }}</th>
+                                    <th>Action</th>
                                     </thead>
                                     <tbody>
                                     </tbody>
@@ -98,15 +91,13 @@
                 },
                 processing: true,
                 serverSide: true,
-                "order": [[0, "desc"]],
-                ajax: "{{route('appointment.index') }}",
+                "order": [[0, "asc"]],
+                ajax: "{{route('appointment-for-today.appointments') }}",
                 columns: [
                     {data: 'DT_RowIndex', name: 'DT_RowIndex'},
-                    // {data: 'appointment_id', name: 'appointment_id'},
-                    {data: 'patient_id', name: 'patient_id'},
-                    {data: 'doctor_id', name: 'doctor_id'},
-                    {data: 'schedule_id', name: 'schedule_id'},
-                    {data: 'appointment_date', name: 'appointment_date'},
+                    {data: 'name', name: 'name'},
+                    {data: 'phone_no', name: 'phone_no'},
+                    {data: 'time', name: 'time'},
                     {data: 'status', name: 'status'},
                     {
                         data: 'action',
@@ -129,3 +120,4 @@
         }
     </script>
 @endpush
+

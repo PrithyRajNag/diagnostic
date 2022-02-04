@@ -13,6 +13,8 @@
     @else
         <link rel="shortcut icon" type="image/jpg/png/svg/jpeg" href="{{asset("assets/images/favicon-isl.png")}}"/>
     @endif
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jura" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Gruppo" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cuprum" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nova+Square" />
     <link rel="stylesheet" href="{{asset('assets/css/jquery.dataTables.min.css')}}">
