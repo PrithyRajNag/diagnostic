@@ -13,11 +13,14 @@ class DashboardCard extends Component
      */
     public $title;
     public $value;
+    public $cssclass;
 
-    public function __construct($title, $value)
+
+    public function __construct($title, $value, $cssclass)
     {
         $this->title=$title;
         $this->value= $value;
+        $this->cssclass= $cssclass;
     }
 
     /**

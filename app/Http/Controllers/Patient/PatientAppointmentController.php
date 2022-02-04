@@ -198,4 +198,52 @@ class PatientAppointmentController extends Controller
             })->get();
         return $totalPatients;
     }
+    public function appointments(AppointmentRequest $request)
+    {
+//        $today = Carbon::now()->toDateString();
+//        $data = Appointment::with(['patients', 'schedules'])->where('appointment_date', $today)->get();
+//        return $data;
+        try {
+            if ($request->ajax()) {
+                $today = Carbon::now()->toDateString();
+                $data = Appointment::with(['patients', 'schedules'])->where('appointment_date', $today)->get();
+
+                return DataTables::of($data)
+                    ->addColumn('name', function (Appointment $today_appointment) {
+                        return $today_appointment->patients->first_name . ' ' . $today_appointment->patients->last_name ?? 'N/A';
+//                        return $today_appointment->patients->full_name ?? 'N/A';
+                    })
+                    ->addColumn('phone_no', function (Appointment $today_appointment) {
+                        return $today_appointment->patients->phone_no ?? 'N/A';
+                    })
+                    ->addColumn('time',  function(Appointment $appointment) {
+                        return  date('h:i a', strtotime($appointment->schedules->start_time)). ' - '. date('h:i a', strtotime($appointment->schedules->end_time)) ?? 'N/A';
+                    })
+//                    ->addColumn('designation', function (User $user) {
+//                        return $user->profile->designation ?? 'N/A';
+//                    })
+                    ->addColumn('status', function ($row) {
+                        if($row->status == 1) {
+                            return '<span class="badge bg-success mb-1">' . ($row->status == 0 ? "Inactive" : "Active") . '</span>';
+                        }else {
+                            return '<span class="badge bg-danger mb-1">' . ($row->status == 0 ? "Inactive" : "Active") . '</span>';
+                        }
+                    })
+                    ->addIndexColumn()
+                    ->addColumn('action', function ($row) {
+                        $btn = '<a href="' . route('appointment.edit', $row->uuid) . '" class="btn btn-sm btn-primary icon icon-left mt-1"><i data-feather="edit"></i></a>
+                                <a href="' . route('appointment.show', $row->uuid) . '" class="btn btn-sm btn-primary icon icon-left mt-1"><i data-feather="info"></i></a>
+                                <button data-bs-toggle="modal" data-bs-target="#danger" onclick="onDelete(this)" id="' . route('appointment.destroy', $row->uuid) . '" name="delBtn"
+                                                                class="btn btn-sm btn-danger icon icon-left mt-1"><i data-feather="trash-2"></i></button>';
+                        return $btn;
+                    })
+                    ->rawColumns(['action','status'])
+                    ->make(true);
+            }
+            return view('patientAppointment.todaysAppointment');
+        } catch (Exception $exception) {
+            return $exception->getMessage();
+        }
+
+    }
 }

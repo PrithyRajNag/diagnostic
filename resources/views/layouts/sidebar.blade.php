@@ -1,5 +1,5 @@
 <div id="sidebar" class='active'>
-    <div class="sidebar-wrapper active">
+    <div class="sidebar-wrapper active sidebar-color">
         <div class="sidebar-header">
             @if(Helper::logo() != null)
                 @if(Helper::logo()['logo'] != null)

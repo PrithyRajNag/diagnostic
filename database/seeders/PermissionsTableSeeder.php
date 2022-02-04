@@ -417,6 +417,10 @@ class PermissionsTableSeeder extends Seeder
                 "title" => 'Appointment Info',
                 "slug" => 'appointment.show',
             ],
+            [
+                "title" => "Today's Appointments List",
+                "slug" => 'appointment-for-today.appointments',
+            ],
             //account
             [
                 "title" => 'Account List',
