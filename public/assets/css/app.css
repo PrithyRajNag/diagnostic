@@ -1709,7 +1709,7 @@ footer {
 .flip-card {
     background-color: transparent;
     width: 260px;
-    height: 75px;
+    height: 104px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
@@ -1752,10 +1752,18 @@ footer {
 
 }
 .front-margin{
-    margin-top: 5px;
+    margin-top: 0px;
 }
 .sidebar-color{
     background: #3a5576 !important;
 }
+.svg{
+    height: 40px;
+    width: 40px;
+    margin-top: 5px;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+
 
 

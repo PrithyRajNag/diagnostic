@@ -9,14 +9,14 @@
 
     <section class="section">
         <div class="row mb-2 mt-3">
-            <x-dashboard-card cssclass="bg-blue2  text-color" title="STAFF" value="{{$totalStaffs}}"></x-dashboard-card>
-            <x-dashboard-card cssclass="bg-blue2  text-color" title="DOCTORS" value="{{$totalDoctors}}"></x-dashboard-card>
-            <x-dashboard-card cssclass="bg-blue2  text-color" title="NURSES" value="{{$totalNurses}}"></x-dashboard-card>
-            <x-dashboard-card cssclass="bg-blue2  text-color" title="ACCOUNTANTS" value="{{$totalAccountants}}"></x-dashboard-card>
-            <x-dashboard-card cssclass="bg-blue2  text-color" title="PATIENTS" value="{{$totalPatients}}"></x-dashboard-card>
-            <x-dashboard-card cssclass="bg-blue2  text-color" title="TESTS" value="{{$totalTests}}"></x-dashboard-card>
-            <x-dashboard-card cssclass="bg-blue2  text-color" title="AMBULANCES" value="{{$totalAmbulances}}"></x-dashboard-card>
-            <x-dashboard-card cssclass="bg-blue2  text-color" title="DUE" value="{{number_format($totalDue, 2,'.',',')}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" svg="{{asset('assets/images/svg/employees-1.svg')}}" title="STAFF" value="{{$totalStaffs}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" svg="{{asset('assets/images/svg/doctor-1.svg')}}" title="DOCTORS" value="{{$totalDoctors}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" svg="{{asset('assets/images/svg/nurse-1.svg')}}" title="NURSES" value="{{$totalNurses}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" svg="{{asset('assets/images/svg/accountant.svg')}}" title="ACCOUNTANTS" value="{{$totalAccountants}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" svg="{{asset('assets/images/svg/patient-1.svg')}}" title="PATIENTS" value="{{$totalPatients}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" svg="{{asset('assets/images/svg/test-tube-1.svg')}}" title="TESTS" value="{{$totalTests}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" svg="{{asset('assets/images/svg/ambulance-1.svg')}}" title="AMBULANCES" value="{{$totalAmbulances}}"></x-dashboard-card>
+            <x-dashboard-card cssclass="bg-blue2  text-color" svg="{{asset('assets/images/svg/money-1.svg')}}" title="DUE" value="{{number_format($totalDue, 2,'.',',')}}"></x-dashboard-card>
         </div>
         <div class="row">
             <div class="col-xl-4 col-sm-6 col-12">
