@@ -1029,7 +1029,8 @@ footer {
 
 .card .card-heading {
     color: #555;
-    font-size: 1.5rem
+    font-size: 1.5rem;
+    margin-bottom: 0;
 }
 
 .card .card-img-overlay {
@@ -1683,7 +1684,7 @@ footer {
     background-blend-mode: soft-light;
 }
 .large-card-font-color{
-    color: firebrick !important;
+    color: #008fa1 !important;
     font-family: Jura;
 }
 .text-color {
@@ -1758,4 +1759,61 @@ footer {
     background: #3a5576 !important;
 }
 
-
+.decoration{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.custom{
+    font-family: Old Standard TT;
+    margin-bottom: 0;
+}
+.number-color-1{
+    color: rgb(59 130 246) !important;
+}
+.number-color-2{
+    color: rgb(245 158 11)!important;
+}
+.number-color-3{
+    color: rgb(227 227 69)!important;
+}
+.number-color-4{
+    color: rgb(55 48 163)!important;
+}
+.number-color-5{
+    color: rgb(75 83 32)!important;
+}
+.number-color-6{
+    color: rgb(150 75 0)!important;
+}
+.number-color-6{
+    color: rgb(150 75 0)!important;
+}
+.number-color-7{
+    color: rgb(34 197 94)!important;
+}
+.number-color-8{
+    color: rgb(255 99 71)!important;
+}
+.card-bg-mint{
+    background: rgb(240 253 244)!important;
+}
+.card-bg-blue{
+    background: rgb(238 242 255)!important;
+}
+.settings{
+    color: #0a58ca;
+    fill: #00a5bb;
+    fill-opacity: 0.5;
+}
+table thead{
+    background-color: lavenderblush;
+}
+.page-title h2,.page-title h3{
+    font-family: Old Standard TT;
+    font-size: 2rem;
+    font-weight: 700;
+}
+li:focus  {
+    background: red;
+    outline: 0;
+}
