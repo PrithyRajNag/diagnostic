@@ -5,7 +5,7 @@
         <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon" style="font-weight: 700"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav d-flex align-items-center navbar-light ms-auto">
@@ -36,10 +36,9 @@
 
                 <li class="dropdown nav-icon me-2">
                     @if(array_intersect(['setting.create'],\Illuminate\Support\Facades\Session::get('permissionTitle')) == ['setting.create'])
-                        <a href="{{route('setting.create')}}"
-                           class="">
+                        <a href="{{route('setting.create')}}">
                             <div class="d-lg-inline-block">
-                                <i data-feather="settings"></i>
+                                <i class="settings" data-feather="settings" ></i>
                             </div>
                         </a>
                     @endif

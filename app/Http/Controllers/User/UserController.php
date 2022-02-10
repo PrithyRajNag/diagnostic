@@ -101,12 +101,31 @@ class UserController extends Controller
             })->with('profile', function ($query) {
                 $query->where('status', 1);
             })->get()->count();
+            $totalAdmins =  User::whereHas('roles', function ($q) {
+                $getRole = Role::where('slug', 'admin')->first();
+                $q->where('role_assign_to_user.role_id', $getRole->id);
+            })->with('profile', function ($query) {
+                $query->where('status', 1);
+            })->get()->count();
+            $totalReceptionists = User::whereHas('roles', function ($q) {
+                $getRole = Role::where('slug', 'receptionist')->first();
+                $q->where('role_assign_to_user.role_id', $getRole->id);
+            })->with('profile', function ($query) {
+                $query->where('status', 1);
+            })->get()->count();
+            $totalLaboratorists = User::whereHas('roles', function ($q) {
+                $getRole = Role::where('slug', 'laboratorist')->first();
+                $q->where('role_assign_to_user.role_id', $getRole->id);
+            })->with('profile', function ($query) {
+                $query->where('status', 1);
+            })->get()->count();
 
             $totalAccountants = User::whereHas('roles', function ($q) {
                 $getRole = Role::where('slug', 'accountant')->first();
                 $q->where('role_assign_to_user.role_id', $getRole->id);
             })->with(['profile'])->get()->count();
             $totalPatients = Patient::where('status', 1)->get()->count();
+            $dailyPatients = Patient::whereDate('created_at', Carbon::now())->get()->count();
             $admittedlPatients = Patient::where('status', 1)->where('discharge_date', null)->get()->count();
             $totalTests = TestInvoice::all()->count();
             $totalAmbulances = Ambulance::all()->count();
@@ -155,11 +174,15 @@ class UserController extends Controller
         }
 
         return view('dashboard.index', [
+            'totalAdmins' => $totalAdmins,
             'totalDoctors' => $totalDoctors,
             'totalStaffs' => $totalStaffs,
             'totalNurses' => $totalNurses,
+            'totalReceptionists' => $totalReceptionists,
+            'totalLaboratorists' => $totalLaboratorists,
             'totalPatients' => $totalPatients,
             'admittedlPatients' => $admittedlPatients,
+            'dailyPatients' => $dailyPatients,
             'totalTests' => $totalTests,
             'totalAmbulances' => $totalAmbulances,
             'totalAccountants' => $totalAccountants,

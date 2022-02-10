@@ -13,6 +13,10 @@
     @else
         <link rel="shortcut icon" type="image/jpg/png/svg/jpeg" href="{{asset("assets/images/favicon-isl.png")}}"/>
     @endif
+
+{{--    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />--}}
+{{--    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Carter+One" />--}}
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Old+Standard+TT" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Jura" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Gruppo" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cuprum" />
@@ -29,6 +33,7 @@
     <link rel="stylesheet" href="{{asset('assets/vendors/select2/select2.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/app.css')}}">
+
 </head>
 
 <body>
