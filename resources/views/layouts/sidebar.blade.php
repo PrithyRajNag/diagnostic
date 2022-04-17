@@ -5,10 +5,10 @@
                 @if(Helper::logo()['logo'] != null)
                     <img src="{{asset("storage/logos/".Helper::logo()['logo'])}}" alt="" srcset="" style="">
                 @else
-                    <img src="{{asset("assets/images/logo-isl.png")}}" alt="" srcset="" style="">
+                    <img src="{{asset("assets/images/logo_ial-02-01.png")}}" alt="" srcset="" style="">
                 @endif
             @else
-                <img src="{{asset("assets/images/logo-isl.png")}}" alt="" srcset="" style="">
+                <img src="{{asset("assets/images/logo_ial-02-01.png")}}" alt="" srcset="" style="">
             @endif
         </div>
         <div class="sidebar-menu">
