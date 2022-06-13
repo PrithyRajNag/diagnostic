@@ -27,6 +27,18 @@
 
 
 <script>
+    $("#sidebar .has-sub").on('click',function (e){
+        console.log('clicked')
+        var $this = $(this);
+        // console.log($this.parent().children('.has-sub').children('.submenu'))
+        if ($(e.target).parent().find('.submenu').hasClass('active')) {
+            $(e.target).parent().find('.submenu').removeClass('active');
+        } else {
+            $(e.target).parent().find('.submenu').addClass('active');
+
+        }
+
+    })
     $(document).ready(function () {
         $("#alert").fadeTo(5000, 500).slideUp(500, function () {
             $("#alert").slideUp(500);

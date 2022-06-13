@@ -6,15 +6,17 @@ var __webpack_exports__ = {};
 // Dropdown Sidebar Menu
 var sidebarItems = document.querySelectorAll(".sidebar-item.has-sub");
 
-var _loop = function _loop() {
-  var sidebarItem = sidebarItems[i];
-  sidebarItems[i].querySelector(".sidebar-link").addEventListener("click", function (e) {
-    e.preventDefault();
-    var submenu = sidebarItem.querySelector(".submenu");
-    if (submenu.classList.contains("active")) submenu.classList.remove("active");
-    submenu.classList.add("active");
-  });
-};
+    var _loop = function _loop() {
+        var sidebarItem = sidebarItems[i];
+        // console.log(sidebarItem)
+        sidebarItems[i].querySelector(".sidebar-link").addEventListener("click", function (e) {
+            e.preventDefault();
+            // var submenu = sidebarItem.querySelector(".submenu");
+
+            //   if (submenu.classList.contains("active")) submenu.classList.remove("active");
+            //   submenu.classList.add("active");
+        });
+    };
 
 for (var i = 0; i < sidebarItems.length; i++) {
   _loop();

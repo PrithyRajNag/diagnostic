@@ -88,17 +88,26 @@ class PatientAppointmentController extends Controller
                     $diff = abs($endTime - $startTime)/60;
                     $maxCapacity = round($diff / $totalPatient->schedules->per_patient_time);
                 }
-                if (count($totalPatients) == 0){
-                    $this->repository->createAppointment($request);
-                    return redirect()->route('appointment.index')->with('success', 'Appointment Created Successfully.');
+                if (count($totalPatients) == 0) {
+                    $savedAppointment = $this->repository->createAppointment($request);
+                    if ($savedAppointment == ''){
+                        return redirect()->route('appointment.index')->with('success', 'Appointment Created Successfully.');
+                    }else{
+                        throw new Exception($savedAppointment);
+                    }
                 }else{
                     if (count($totalPatients) >= $maxCapacity ){
                         throw new Exception('Slot limit full ! The selected doctor has been reached to his Patient limit for selected date');
                     }else{
-                        $this->repository->createAppointment($request);
-                        return redirect()->route('appointment.index')->with('success', 'Appointment Created Successfully.');
+                        $savedAppointment = $this->repository->createAppointment($request);
+                        if ($savedAppointment == ''){
+                            return redirect()->route('appointment.index')->with('success', 'Appointment Created Successfully.');
+                        }else{
+                            throw new Exception($savedAppointment);
+                        }
                     }
                 }
+
             }
         }
         catch (Exception $exception)

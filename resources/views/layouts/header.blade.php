@@ -8,10 +8,10 @@
         @if(Helper::favicon()['favicon'] != null)
             <link rel="shortcut icon" type="image/jpg/png/svg/jpeg" href="{{asset("storage/favicons/".Helper::favicon()['favicon'])}}"/>
         @else
-            <link rel="shortcut icon" type="image/jpg/png/svg/jpeg" href="{{asset("assets/images/favicon-isl.png")}}"/>
+            <link rel="shortcut icon" type="image/jpg/png/svg/jpeg" href="{{asset("assets/images/logo_ial.png")}}"/>
         @endif
     @else
-        <link rel="shortcut icon" type="image/jpg/png/svg/jpeg" href="{{asset("assets/images/favicon-isl.png")}}"/>
+        <link rel="shortcut icon" type="image/jpg/png/svg/jpeg" href="{{asset("assets/images/logo_ial.pnggit sat")}}"/>
     @endif
 
 {{--    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Quicksand" />--}}
